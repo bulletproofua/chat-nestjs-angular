@@ -1,0 +1,33 @@
+$max-h: 160px;
+
+.contact-info {
+    height: $max-h;
+    display: flex;
+    flex-direction: row;
+    background-color: #BECBD9;
+
+    .avatar-wrapper {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: $max-h;
+        height: $max-h;
+        overflow: hidden;
+
+        .avatar {
+            height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .info {
+        flex: 1;
+        padding: 21px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        .info-name {
+
+        }
+    }
+}

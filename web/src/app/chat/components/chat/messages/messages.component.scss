@@ -1,0 +1,11 @@
+.list-wrapper {
+    height: 100%;
+    position: relative;
+
+    .list {
+        position: absolute;
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,30 @@
+.main-wrapper {
+   display: flex;
+   flex-direction: column; 
+   height: 100vh;
+   background: #586670;
+
+   .chat-wrapper {
+      flex: 1;
+      margin: 5%;
+         
+      .content {
+         display: flex;
+         flex-direction: row; 
+         height: 100%;
+         overflow: auto;
+         border-radius: .2em;
+
+         .chat {
+            flex: 1;
+            height: inherit;
+         }
+      
+         .contacts {
+            width: 320px;
+            height: inherit;
+            border-left: 1px solid #DDDDDD;
+         }
+      }
+   }
+}

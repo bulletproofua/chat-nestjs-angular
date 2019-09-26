@@ -1,0 +1,22 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    background-color: #D7DFE7;
+
+    .info {
+        // max-height: 180px;
+        flex: 1;
+    }
+
+    .message {
+        position: relative;
+        flex: 4;
+        padding: 16px;
+    }
+
+    .inputs {
+        padding-right: 30px;
+    }
+}

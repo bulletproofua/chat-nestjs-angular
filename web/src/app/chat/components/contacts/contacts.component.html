@@ -1,0 +1,23 @@
+<section class="contacts-wrapper">
+  <div class="btn-wrapper">
+    <button 
+      [ngClass]="{'status-btn' : true, 'active-status-btn': activeBtn === 'Online' }"
+      (click)="activeBtn = 'Online'"
+    >Online</button>
+    <div class="vertical-separator"></div>
+    <button
+      [ngClass]="{'status-btn' : true, 'active-status-btn': activeBtn === 'All' }"
+      (click)="activeBtn = 'All'"
+     >All</button>
+  </div>
+  <div class="contact-list-wrapper">
+    <div class="list" >
+      <ng-container *ngFor="let contact of contacts">
+        <app-contact></app-contact>
+      </ng-container>
+    </div>
+    <div class="search">
+      <input type="text" class="form-control" placeholder="Search...">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+.contacts-wrapper {
+    background: #FFFFFF;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    .btn-wrapper {
+        display: flex;
+        flex-direction: row;
+
+        height: 50px;
+
+        .vertical-separator {
+            border-left: 1px solid #DDDDDD;
+        }
+
+        .status-btn {
+            flex: 1;
+            border: 0px;
+            border-bottom: 1px solid #DDDDDD;
+            background: #F8F8F8;
+            outline: none;
+        }
+
+        .active-status-btn {
+            background: #FFFFFF;
+            border-bottom: 0px;
+        }
+    }
+
+    .contact-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .list {
+            height: 1px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .list::-webkit-scrollbar {
+            width: 5px;
+            background-color: #BECBD9;
+        }
+        
+        .list::-webkit-scrollbar-thumb {
+            background-color: #9DAAB9;
+        }
+
+        .search {
+            height: 60px;
+            padding: 7px 7px 16px 7px;
+        }
+    }
+}

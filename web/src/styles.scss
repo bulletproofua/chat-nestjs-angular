@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+body, html, my-app {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+  
+my-app {
+    display: flex;
+    flex-flow: column;
+}
+
+
+.second-text-color {
+    color: #9AA8B7;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #BECBD9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #9DAAB9;
+}
