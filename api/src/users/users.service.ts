@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
+
 import * as uuidv1 from 'uuid/v1';
+import * as bcrypt from 'bcrypt';
 export interface User {
   id?: string;
   email: string;
@@ -11,6 +13,7 @@ export interface User {
 @Injectable()
 export class UsersService {
   private readonly users: User[];
+  public saltRounds = 10;
 
   constructor() {
     this.users = [
@@ -18,21 +21,21 @@ export class UsersService {
         id: '1',
         email: 'qq@gmail.com',
         username: 'john',
-        password: 'changeme',
+        password: '$2b$10$ARxenNOfzvH6J.3TNxMSjOMqRnkI/7BIyES7wSBWhpXwfW6smGx2m',
         avatar: ''
       },
       {
         id: '2',
         email: 'qqw@gmail.com',
         username: 'chris',
-        password: 'secret',
+        password: '$2b$10$ARxenNOfzvH6J.3TNxMSjOMqRnkI/7BIyES7wSBWhpXwfW6smGx2m',
         avatar: ''
       },
       {
         id: '3',
         email: 'qqe@gmail.com',
         username: 'maria',
-        password: 'gues1s1',
+        password: '$2b$10$ARxenNOfzvH6J.3TNxMSjOMqRnkI/7BIyES7wSBWhpXwfW6smGx2m',
         avatar: ''
       },
     ];
@@ -49,9 +52,19 @@ export class UsersService {
   async Create(user: User): Promise<any> {
     const newUser = {
       id: uuidv1(),
-      ...user
+      ...user,
+      password: await this.getHash(user.password)
     };
+
     this.users.push(newUser);
     return newUser.id;
+  }
+
+  async getHash(password: string|undefined): Promise<string> {
+    return bcrypt.hash(password, this.saltRounds);
+  }
+
+  async compareHash(password: string|undefined, hash: string|undefined): Promise<boolean> {
+    return bcrypt.compare(password, hash);
   }
 }
