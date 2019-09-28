@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="form-group">
-        <button [disabled]="loginForm?.invalid || error" class="btn btn-primary" (click)="onSubmit(loginForm)">Login</button>
+        <button [disabled]="loginForm?.invalid || error" class="btn btn-primary" (click)="onSubmit()">Login</button>
         <a [routerLink]="['/registration']" class="btn btn-link">Registration</a>
       </div>
       <div [hidden]='!error' class="alert alert-danger" role="alert">

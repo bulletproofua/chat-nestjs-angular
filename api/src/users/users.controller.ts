@@ -20,8 +20,4 @@ export class UsersController {
         return !emails.includes(data.email);
     }
 
-    @Post('setUser')
-    async setUser(@Body() data: User) {
-        return this.usersService.setUser(data);
-    }
 }

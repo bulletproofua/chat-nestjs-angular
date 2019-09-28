@@ -5,11 +5,6 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule),
-    canActivate: [AuthGuardService]
-  },
-  {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule),
   },
@@ -17,6 +12,12 @@ const routes: Routes = [
     path: 'registration',
     loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule),
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule),
+    canActivate: [AuthGuardService]
+  },
+
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: "**", redirectTo: 'login'}
 ];

@@ -23,7 +23,15 @@ export class UserEffects {
   setUserData$: Observable<void> = this.actions$.pipe(
     ofType(UserActionTypes.SetUserData),
     map((action: any) => {
-      const value = (typeof action.payload === 'object') ? JSON.stringify(action.payload) : action.payload;
+
+      const ap = action.payload;
+      const data = {
+        id: ap.id,
+        access_token: ap.access_token,
+        email: ap.email,
+        username: ap.username
+      }
+      const value = JSON.stringify(data);
       let cookie = `${this.KEY}=${encodeURIComponent(value)}`;
       window.document.cookie = cookie;
     })
@@ -37,7 +45,10 @@ export class UserEffects {
     ),
     map((action: any) => {
       window.document.cookie = `${this.KEY}=''`;
-      this.router.navigateByUrl('login');
+      const url = window.location.pathname;
+      if (url !== '/login' && url !== '/registration') {
+        this.router.navigateByUrl('login');
+      }
     })
   );
  
@@ -45,7 +56,6 @@ export class UserEffects {
   getUserData$: Observable<Action> = this.actions$.pipe(
     ofType(UserActionTypes.GetUserData),
     map((action: any) => {
-      console.log("TCL: UserEffects -> window.document.cookie", window.document.cookie)
       let cookie = window.document
                   .cookie.split('; ')
                   .filter((item: any) => item.split('=')[0] === this.KEY && item !== `${this.KEY}=''`).pop();

@@ -21,10 +21,9 @@ import { User } from '../../../../ngrx/user-module/models/user';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  public loading = false;
   public error = '';
 
-  isUserLoggedIn$ = this.store.pipe(select(fromUser.isUserLoggedIn));
+  public isUserLoggedIn$ = this.store.pipe(select(fromUser.isUserLoggedIn));
 
   constructor(
       private formBuilder: FormBuilder,
@@ -32,10 +31,10 @@ export class LoginComponent implements OnInit {
       private router: Router,
       private store: Store<any>
   ) {
-    this.redirectIfAlredyLoggedIn();
+    this.redirectIfAlreadyLoggedIn();
   }
 
-  redirectIfAlredyLoggedIn() {
+  redirectIfAlreadyLoggedIn() {
     this.isUserLoggedIn$.pipe(take(1)).subscribe((userLoggedIn: boolean) => {
       if (userLoggedIn) {
         this.router.navigateByUrl('chat');
@@ -64,10 +63,10 @@ export class LoginComponent implements OnInit {
 		}
 	}
 
-  onSubmit(form) {
+  onSubmit() {
     const data = {
-      username: form.get('email').value,
-      password: form.get('password').value
+      username: this.email.value,
+      password: this.password.value
     }
 
     this.loginService.login(data)

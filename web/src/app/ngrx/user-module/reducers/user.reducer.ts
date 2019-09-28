@@ -7,6 +7,7 @@ const initialState: UserState = {
   id: undefined,
   username: undefined,
   email: undefined,
+  avatar: undefined,
   access_token: undefined
 };
 
@@ -18,12 +19,13 @@ export function reducer(
 
     case UserActionTypes.GetUserDataSuccess:
     case UserActionTypes.SetUserData: {
-      const {id, username, email, access_token} = action.payload
+      const {id, username, email, access_token, avatar} = action.payload
       return {
         ...state,
         id: id,
         username: username,
         email: email,
+        avatar: avatar,
         access_token: access_token
       }
     }
