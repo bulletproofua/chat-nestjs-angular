@@ -1,27 +1,25 @@
-import { Injectable } from '@nestjs/common';
-import { UsersService, User } from '../users/users.service';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { UserService } from '../users/user.service';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly usersService: UsersService,
+    private readonly usersService: UserService,
     private readonly jwtService: JwtService
   ) {}
 
   async validateUser(email: string, pass: string): Promise<any> {
-    const user = await this.usersService.findOne(email);
+    const user = await this.usersService.findByEmail(email);
     if (user) {
-      if (await this.usersService.compareHash(pass, user.password)) {
-        const { password, ...result } = user;
-        return result;
-      }
+      const { password, ...result } = user;
+      return result;
     }
     return null;
   }
 
   async login(user: any) {
-    const currentUser = await this.usersService.findOne(user.username);
+    const currentUser = await this.usersService.findOne({ email: user.username, password: user.password} );
     const payload = { email: currentUser.email, sub: currentUser.id };
     return {
       id: currentUser.id,
@@ -32,9 +30,12 @@ export class AuthService {
     };
   }
 
-  async register(user: User): Promise<any | undefined> {
-    const id = await this.usersService.Create(user);
-    return { id: id };
+  async register(user: any): Promise<any | undefined> {
+    const createdUser = await this.usersService.create(user);
+
+    await this.usersService.createUserChats(createdUser.id);
+
+    return { id: createdUser.id };
   }
 
 }

@@ -59,8 +59,6 @@ export class UserEffects {
       let cookie = window.document
                   .cookie.split('; ')
                   .filter((item: any) => item.split('=')[0] === this.KEY && item !== `${this.KEY}=''`).pop();
-
-                  console.log("TCL: UserEffects -> cookie", cookie)
       if (!cookie) { return new GetUserDataFail(); }
 
       let v = cookie.split('=').slice(1).join('=');

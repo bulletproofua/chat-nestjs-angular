@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-chat',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
   }

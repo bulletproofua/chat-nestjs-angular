@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+
+import * as fromContacts from '../../../ngrx/reducers';
 
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
   styleUrls: ['./contact-info.component.scss']
 })
-export class ContactInfoComponent implements OnInit {
+export class ContactInfoComponent {
 
-  constructor() { }
+  public selectedContact$ = this.store.pipe(select(fromContacts.getSelectedContact));
 
-  ngOnInit() {
-  }
+  constructor(private store: Store<any>) { }
 
 }

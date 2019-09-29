@@ -19,13 +19,13 @@ export class RegistrationService {
   constructor(private http: HttpClient) {}
 
   checkEmailNotTaken(email: string) {
-    return this.http.post(`${environment.apiUrl}/users/allUserEmails`, {email: email}, httpOptions).pipe(
+    return this.http.post(`${environment.apiUrl}/user/allUserEmails`, {email: email}, httpOptions).pipe(
         map((isUniq: boolean) => isUniq)
     )
   }
 
   checkUserNameNotTaken(username: string) {
-    return this.http.post(`${environment.apiUrl}/users/isUserNameIsUniq`, {name: username}, httpOptions).pipe(
+    return this.http.post(`${environment.apiUrl}/user/isUserNameIsUniq`, {name: username}, httpOptions).pipe(
         map((isUniq: boolean) => isUniq)
     )
   }

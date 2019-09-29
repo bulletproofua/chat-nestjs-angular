@@ -20,6 +20,12 @@ import { MessageComponent } from './components/chat/messages/message/message.com
 import { InputMessageBlockComponent } from './components/chat/input-message-block/input-message-block.component';
 import { ContactComponent } from './components/contacts/contact/contact.component';
 
+// import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ContactsEffects } from './ngrx/effects/contacts.effects';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ 
+// const config: SocketIoConfig = { url: 'http://localhost:3000', options: { cookie: 'chat' } };
+
 const COMPONENTS = [
   ChatMainComponent,
   ChatComponent,
@@ -37,8 +43,11 @@ const COMPONENTS = [
     CommonModule,
     ChatRoutingModule,
     NavbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    // SocketIoModule.forRoot(config),
     StoreModule.forFeature('chat', reducers),
-    EffectsModule.forFeature([]),
+    EffectsModule.forFeature([ContactsEffects]),
   ]
 })
 export class ChatModule { }

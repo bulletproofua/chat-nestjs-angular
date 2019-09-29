@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { SelectContact } from 'src/app/chat/ngrx/actions/contacts.actions';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
 
-  constructor() { }
+  @Input() userData;
+  @Input() selectedContactUserId: string;
+  @Input() online: boolean;
 
-  ngOnInit() {
+  constructor(private store: Store<any>) { }
+
+  selectContact(userId: string) {
+    this.store.dispatch(new SelectContact(userId));
   }
 
 }

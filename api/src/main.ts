@@ -6,7 +6,7 @@ import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  app.useStaticAssets(join(__dirname, '../../web', 'dist'));
+  app.useStaticAssets(join(__dirname, '../../web', 'dist/web'));
   app.use(bodyParser.json({limit: '50mb'}));
   app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
   app.enableCors();
