@@ -9,13 +9,17 @@ import {
 } from '@angular/router';
 
 import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import * as fromUser from '../ngrx/user-module/reducers';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad {
+  
+  isUserLoggedIn$ = this.store.pipe(select(fromUser.isUserLoggedIn));
 
-  constructor(private Router: Router) { }
+  constructor(private store: Store<any>) { }
 
   canActivate(Route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>|Promise<boolean>|boolean {
     return this.checkLogin();
@@ -26,13 +30,11 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
   }
 
   canLoad(): Observable<boolean>|Promise<boolean>|boolean {
-    return  this.checkLogin();
+    return this.checkLogin();
   }
 
-  
   public checkLogin(): Observable<boolean> | boolean {
-    // TODO написати профірку
-    return true;
+    return this.isUserLoggedIn$
   }
 
 }

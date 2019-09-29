@@ -1,13 +1,16 @@
-<div class="contact-wrapped">
+<div 
+  [ngClass]="{'contact-wrapped': true, 'selected': selectedContactUserId === userData.userId}" 
+  (click)="selectContact(userData?.userId)"
+>
   <div class="avatar-wrapper">
-    <img class="avatar" src="assets/img/user/default_user_2.png" alt="user_icon">
+    <img class="avatar" [src]="userData?.avatar" alt="user_icon">
   </div>
   <div class="info">
     <div class="name">
-      Name
+      {{ userData?.username }}
     </div>
     <div class="additional">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vero ratione ut id sed, in repellat, beatae, nesciunt earum ipsum cumque? Ipsum, repellendus perferendis. Commodi voluptatem quaerat necessitatibus rem officiis!
+      last message text
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">UserName</a>
+  <a class="navbar-brand">{{ userName$ | async | uppercase }}</a>
   <button class="btn btn-outline-secondary" (click)="logout()">Logout</button>
 </nav>

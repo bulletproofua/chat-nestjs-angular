@@ -1,0 +1,1044 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["chat-chat-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat-main/chat-main.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat-main/chat-main.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-wrapper\">\n  <app-navbar></app-navbar>\n  <section class=\"chat-wrapper\">\n    <div class=\"content\">\n      <div class=\"chat\">\n        <app-chat></app-chat>\n      </div>\n      <div class=\"contacts\">\n        <app-contacts></app-contacts>\n      </div>\n    </div>\n  </section>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/chat.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/chat.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"chat\">\n  <div class=\"info\">\n    <app-contact-info></app-contact-info>\n  </div>\n  <div class=\"message\">\n    <app-messages></app-messages>\n  </div>\n  <div class=\"inputs\">\n    <app-input-message-block></app-input-message-block>\n  </div>\n</section>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/contact-info/contact-info.component.html":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/contact-info/contact-info.component.html ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"contact-info\">\n  <ng-container *ngIf=\"(selectedContact$ | async) as SC; else notSelected\">\n    <div class=\"avatar-wrapper\">\n      <img class=\"avatar\" [src]=\"SC?.avatar\" alt=\"user_icon\">\n    </div>\n  \n    <div class=\"info\">\n      <h4 class=\"info-name\">{{SC?.username}}</h4>\n      <p> Some info about user</p>\n    </div>\n  </ng-container>\n  <ng-template #notSelected>\n    <div>\n      Please select chat\n    </div>\n  </ng-template>\n  \n  \n</section>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/input-message-block/input-message-block.component.html":
+/*!***********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/input-message-block/input-message-block.component.html ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"message-block\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Start chatting!\">\n    <button class=\"btn\" >Send message</button>\n</section>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/message/message.component.html":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/message/message.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrapper\">\n  <div class=\"header\">\n    <div class=\"header-sender\"> sender </div>\n    <div class=\"header-time second-text-color\"> {{ time | date:'shortTime' }} </div>\n  </div>\n  <div class=\"message-wrapper\">\n    <div class=\"message\">\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nisi doloremque, aliquid distinctio aut quo? Maxime distinctio eius voluptatum, nulla incidunt vitae et necessitatibus, laudantium explicabo corporis rem provident nihil?\n    </div>\n  </div>\n  <!-- <div class=\"second-text-color\">\n    seen {{ time | date:'shortTime' }}\n  </div> -->\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/messages.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/messages.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"list-wrapper\">\n \n  <div class=\"list\">\n    <div *ngFor=\"let message of Messages\">\n       <app-message></app-message>\n    </div>\n      <!--  -->\n\n  </div>\n  <!-- <div class=\"aaa\">\n    aaa\n  </div> -->\n</div>\n\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contact/contact.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contact/contact.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div \n  [ngClass]=\"{'contact-wrapped': true, 'selected': selectedContactUserId === userData.userId}\" \n  (click)=\"selectContact(userData?.userId)\"\n>\n  <div class=\"avatar-wrapper\">\n    <img class=\"avatar\" [src]=\"userData?.avatar\" alt=\"user_icon\">\n  </div>\n  <div class=\"info\">\n    <div class=\"name\">\n      {{ userData?.username }}\n    </div>\n    <div class=\"additional\">\n      last message text\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contacts.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contacts.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"contacts-wrapper\">\n  <div class=\"btn-wrapper\">\n    <button \n      [ngClass]=\"{'status-btn' : true, 'active-status-btn': activeBtn === 'Online' }\"\n      (click)=\"activeBtn = 'Online'\"\n    >Online</button>\n    <div class=\"vertical-separator\"></div>\n    <button\n      [ngClass]=\"{'status-btn' : true, 'active-status-btn': activeBtn === 'All' }\"\n      (click)=\"activeBtn = 'All'\"\n     >All</button>\n  </div>\n  <div class=\"contact-list-wrapper\">\n    <div class=\"list\" >\n      <ng-container *ngFor=\"let contact of contacts$ | async; trackBy: trackByFn\">\n        <app-contact [userData]=\"contact\" [selectedContactUserId]=\"selectedContactId$ | async\"></app-contact>\n      </ng-container>\n    </div>\n    <div class=\"search\">\n      <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" [formControl]=\"search\">\n    </div>\n  </div>\n</section>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/navbar/components/navbar/navbar.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/navbar/components/navbar/navbar.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light bg-light\">\n  <a class=\"navbar-brand\">{{ userName$ | async | uppercase }}</a>\n  <button class=\"btn btn-outline-secondary\" (click)=\"logout()\">Logout</button>\n</nav>");
+
+/***/ }),
+
+/***/ "./src/app/chat/chat-routing.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/chat/chat-routing.module.ts ***!
+  \*********************************************/
+/*! exports provided: ChatRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatRoutingModule", function() { return ChatRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _components_chat_main_chat_main_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/chat-main/chat-main.component */ "./src/app/chat/components/chat-main/chat-main.component.ts");
+
+
+
+
+const routes = [
+    {
+        path: '', component: _components_chat_main_chat_main_component__WEBPACK_IMPORTED_MODULE_3__["ChatMainComponent"], runGuardsAndResolvers: "always"
+    }
+];
+let ChatRoutingModule = class ChatRoutingModule {
+};
+ChatRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], ChatRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/chat.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/chat/chat.module.ts ***!
+  \*************************************/
+/*! exports provided: ChatModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatModule", function() { return ChatModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _navbar_navbar_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../navbar/navbar.module */ "./src/app/navbar/navbar.module.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm2015/effects.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _ngrx_reducers_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ngrx/reducers/index */ "./src/app/chat/ngrx/reducers/index.ts");
+/* harmony import */ var _chat_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./chat-routing.module */ "./src/app/chat/chat-routing.module.ts");
+/* harmony import */ var _components_chat_main_chat_main_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/chat-main/chat-main.component */ "./src/app/chat/components/chat-main/chat-main.component.ts");
+/* harmony import */ var _components_chat_chat_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/chat/chat.component */ "./src/app/chat/components/chat/chat.component.ts");
+/* harmony import */ var _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/contacts/contacts.component */ "./src/app/chat/components/contacts/contacts.component.ts");
+/* harmony import */ var _components_chat_contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/chat/contact-info/contact-info.component */ "./src/app/chat/components/chat/contact-info/contact-info.component.ts");
+/* harmony import */ var _components_chat_messages_messages_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/chat/messages/messages.component */ "./src/app/chat/components/chat/messages/messages.component.ts");
+/* harmony import */ var _components_chat_messages_message_message_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/chat/messages/message/message.component */ "./src/app/chat/components/chat/messages/message/message.component.ts");
+/* harmony import */ var _components_chat_input_message_block_input_message_block_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/chat/input-message-block/input-message-block.component */ "./src/app/chat/components/chat/input-message-block/input-message-block.component.ts");
+/* harmony import */ var _components_contacts_contact_contact_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/contacts/contact/contact.component */ "./src/app/chat/components/contacts/contact/contact.component.ts");
+/* harmony import */ var _ngrx_effects_contacts_effects__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./ngrx/effects/contacts.effects */ "./src/app/chat/ngrx/effects/contacts.effects.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+// modules
+
+// ngrx
+
+
+
+// components
+
+
+
+
+
+
+
+
+
+// import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+
+// const config: SocketIoConfig = { url: 'http://localhost:3000', options: { cookie: 'chat' } };
+const COMPONENTS = [
+    _components_chat_main_chat_main_component__WEBPACK_IMPORTED_MODULE_8__["ChatMainComponent"],
+    _components_chat_chat_component__WEBPACK_IMPORTED_MODULE_9__["ChatComponent"],
+    _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_10__["ContactsComponent"],
+    _components_chat_contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_11__["ContactInfoComponent"],
+    _components_chat_messages_messages_component__WEBPACK_IMPORTED_MODULE_12__["MessagesComponent"],
+    _components_chat_messages_message_message_component__WEBPACK_IMPORTED_MODULE_13__["MessageComponent"],
+    _components_chat_input_message_block_input_message_block_component__WEBPACK_IMPORTED_MODULE_14__["InputMessageBlockComponent"],
+    _components_contacts_contact_contact_component__WEBPACK_IMPORTED_MODULE_15__["ContactComponent"]
+];
+let ChatModule = class ChatModule {
+};
+ChatModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: COMPONENTS,
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _chat_routing_module__WEBPACK_IMPORTED_MODULE_7__["ChatRoutingModule"],
+            _navbar_navbar_module__WEBPACK_IMPORTED_MODULE_3__["NavbarModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_17__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_17__["ReactiveFormsModule"],
+            // SocketIoModule.forRoot(config),
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["StoreModule"].forFeature('chat', _ngrx_reducers_index__WEBPACK_IMPORTED_MODULE_6__["reducers"]),
+            _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["EffectsModule"].forFeature([_ngrx_effects_contacts_effects__WEBPACK_IMPORTED_MODULE_16__["ContactsEffects"]]),
+        ]
+    })
+], ChatModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat-main/chat-main.component.scss":
+/*!********************************************************************!*\
+  !*** ./src/app/chat/components/chat-main/chat-main.component.scss ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".main-wrapper {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  background: #586670; }\n  .main-wrapper .chat-wrapper {\n    flex: 1;\n    margin: 5%; }\n  .main-wrapper .chat-wrapper .content {\n      display: flex;\n      flex-direction: row;\n      height: 100%;\n      overflow: auto;\n      border-radius: .2em; }\n  .main-wrapper .chat-wrapper .content .chat {\n        flex: 1;\n        height: inherit; }\n  .main-wrapper .chat-wrapper .content .contacts {\n        width: 320px;\n        height: inherit;\n        border-left: 1px solid #DDDDDD; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQtbWFpbi9EOlxcR2l0XFxHZW5lc2lzXFx3ZWIvc3JjXFxhcHBcXGNoYXRcXGNvbXBvbmVudHNcXGNoYXQtbWFpblxcY2hhdC1tYWluLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0csYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsbUJBQW1CLEVBQUE7RUFKdEI7SUFPTSxPQUFPO0lBQ1AsVUFBVSxFQUFBO0VBUmhCO01BV1MsYUFBYTtNQUNiLG1CQUFtQjtNQUNuQixZQUFZO01BQ1osY0FBYztNQUNkLG1CQUFtQixFQUFBO0VBZjVCO1FBa0JZLE9BQU87UUFDUCxlQUFlLEVBQUE7RUFuQjNCO1FBdUJZLFlBQVk7UUFDWixlQUFlO1FBQ2YsOEJBQThCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jaGF0L2NvbXBvbmVudHMvY2hhdC1tYWluL2NoYXQtbWFpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLXdyYXBwZXIge1xyXG4gICBkaXNwbGF5OiBmbGV4O1xyXG4gICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBcclxuICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgYmFja2dyb3VuZDogIzU4NjY3MDtcclxuXHJcbiAgIC5jaGF0LXdyYXBwZXIge1xyXG4gICAgICBmbGV4OiAxO1xyXG4gICAgICBtYXJnaW46IDUlO1xyXG4gICAgICAgICBcclxuICAgICAgLmNvbnRlbnQge1xyXG4gICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICBmbGV4LWRpcmVjdGlvbjogcm93OyBcclxuICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICBvdmVyZmxvdzogYXV0bztcclxuICAgICAgICAgYm9yZGVyLXJhZGl1czogLjJlbTtcclxuXHJcbiAgICAgICAgIC5jaGF0IHtcclxuICAgICAgICAgICAgZmxleDogMTtcclxuICAgICAgICAgICAgaGVpZ2h0OiBpbmhlcml0O1xyXG4gICAgICAgICB9XHJcbiAgICAgIFxyXG4gICAgICAgICAuY29udGFjdHMge1xyXG4gICAgICAgICAgICB3aWR0aDogMzIwcHg7XHJcbiAgICAgICAgICAgIGhlaWdodDogaW5oZXJpdDtcclxuICAgICAgICAgICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjREREREREO1xyXG4gICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgfVxyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat-main/chat-main.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/chat/components/chat-main/chat-main.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ChatMainComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatMainComponent", function() { return ChatMainComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+
+
+
+let ChatMainComponent = class ChatMainComponent {
+    // private socket: Socket, 
+    constructor(store) {
+        this.store = store;
+    }
+    ngOnInit() {
+        // this.store.dispatch(new LoadContacts())
+        // this.socket.connect()
+        // this.getUsers().subscribe((e) => {
+        //   console.log("TCL: ChatMainComponent -> ngOnInit -> e", e)
+        // })
+        // this.socket.emit('users', { message: 'tatat'})
+    }
+};
+ChatMainComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+ChatMainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-chat-main',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./chat-main.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat-main/chat-main.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./chat-main.component.scss */ "./src/app/chat/components/chat-main/chat-main.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], ChatMainComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/chat.component.scss":
+/*!**********************************************************!*\
+  !*** ./src/app/chat/components/chat/chat.component.scss ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".chat {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  justify-content: space-between;\n  background-color: #D7DFE7; }\n  .chat .info {\n    flex: 1; }\n  .chat .message {\n    position: relative;\n    flex: 4;\n    padding: 16px; }\n  .chat .inputs {\n    padding-right: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQvRDpcXEdpdFxcR2VuZXNpc1xcd2ViL3NyY1xcYXBwXFxjaGF0XFxjb21wb25lbnRzXFxjaGF0XFxjaGF0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osOEJBQThCO0VBQzlCLHlCQUF5QixFQUFBO0VBTDdCO0lBU1EsT0FBTyxFQUFBO0VBVGY7SUFhUSxrQkFBa0I7SUFDbEIsT0FBTztJQUNQLGFBQWEsRUFBQTtFQWZyQjtJQW1CUSxtQkFBbUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NoYXQvY29tcG9uZW50cy9jaGF0L2NoYXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2hhdCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNEN0RGRTc7XHJcblxyXG4gICAgLmluZm8ge1xyXG4gICAgICAgIC8vIG1heC1oZWlnaHQ6IDE4MHB4O1xyXG4gICAgICAgIGZsZXg6IDE7XHJcbiAgICB9XHJcblxyXG4gICAgLm1lc3NhZ2Uge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBmbGV4OiA0O1xyXG4gICAgICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgICB9XHJcblxyXG4gICAgLmlucHV0cyB7XHJcbiAgICAgICAgcGFkZGluZy1yaWdodDogMzBweDtcclxuICAgIH1cclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/chat.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/chat/components/chat/chat.component.ts ***!
+  \********************************************************/
+/*! exports provided: ChatComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatComponent", function() { return ChatComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+
+
+
+let ChatComponent = class ChatComponent {
+    constructor(store) {
+        this.store = store;
+    }
+    ngOnInit() {
+    }
+};
+ChatComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+ChatComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-chat',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./chat.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/chat.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./chat.component.scss */ "./src/app/chat/components/chat/chat.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], ChatComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/contact-info/contact-info.component.scss":
+/*!*******************************************************************************!*\
+  !*** ./src/app/chat/components/chat/contact-info/contact-info.component.scss ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".contact-info {\n  height: 100px;\n  display: flex;\n  flex-direction: row;\n  background-color: #BECBD9; }\n  .contact-info .avatar-wrapper {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100px;\n    height: 100px;\n    overflow: hidden; }\n  .contact-info .avatar-wrapper .avatar {\n      height: 100%;\n      max-width: 100%; }\n  .contact-info .info {\n    flex: 1;\n    padding: 21px;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQvY29udGFjdC1pbmZvL0Q6XFxHaXRcXEdlbmVzaXNcXHdlYi9zcmNcXGFwcFxcY2hhdFxcY29tcG9uZW50c1xcY2hhdFxcY29udGFjdC1pbmZvXFxjb250YWN0LWluZm8uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDSSxhQUhTO0VBSVQsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix5QkFBeUIsRUFBQTtFQUo3QjtJQU9RLGFBQVk7SUFDWix1QkFBdUI7SUFDdkIsbUJBQW1CO0lBQ25CLFlBWks7SUFhTCxhQWJLO0lBY0wsZ0JBQWdCLEVBQUE7RUFaeEI7TUFlWSxZQUFZO01BQ1osZUFBZSxFQUFBO0VBaEIzQjtJQXFCUSxPQUFPO0lBQ1AsYUFBYTtJQUNiLHVCQUF1QjtJQUN2QixnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NoYXQvY29tcG9uZW50cy9jaGF0L2NvbnRhY3QtaW5mby9jb250YWN0LWluZm8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkbWF4LWg6IDEwMHB4O1xyXG5cclxuLmNvbnRhY3QtaW5mbyB7XHJcbiAgICBoZWlnaHQ6ICRtYXgtaDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0JFQ0JEOTtcclxuXHJcbiAgICAuYXZhdGFyLXdyYXBwZXIge1xyXG4gICAgICAgIGRpc3BsYXk6ZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIHdpZHRoOiAkbWF4LWg7XHJcbiAgICAgICAgaGVpZ2h0OiAkbWF4LWg7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAgICAgLmF2YXRhciB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuaW5mbyB7XHJcbiAgICAgICAgZmxleDogMTtcclxuICAgICAgICBwYWRkaW5nOiAyMXB4O1xyXG4gICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcblxyXG4gICAgICAgIC5pbmZvLW5hbWUge1xyXG5cclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/contact-info/contact-info.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/chat/components/chat/contact-info/contact-info.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ContactInfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactInfoComponent", function() { return ContactInfoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _ngrx_reducers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../ngrx/reducers */ "./src/app/chat/ngrx/reducers/index.ts");
+
+
+
+
+let ContactInfoComponent = class ContactInfoComponent {
+    constructor(store) {
+        this.store = store;
+        this.selectedContact$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_ngrx_reducers__WEBPACK_IMPORTED_MODULE_3__["getSelectedContact"]));
+    }
+};
+ContactInfoComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+ContactInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-contact-info',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./contact-info.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/contact-info/contact-info.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./contact-info.component.scss */ "./src/app/chat/components/chat/contact-info/contact-info.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], ContactInfoComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/input-message-block/input-message-block.component.scss":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/chat/components/chat/input-message-block/input-message-block.component.scss ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".message-block {\n  display: flex;\n  flex-direction: row;\n  align-items: center; }\n  .message-block input {\n    margin: 7px; }\n  .message-block button {\n    margin: 7px;\n    margin-left: 0px;\n    width: 300px;\n    background: #428BCA;\n    color: #fff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQvaW5wdXQtbWVzc2FnZS1ibG9jay9EOlxcR2l0XFxHZW5lc2lzXFx3ZWIvc3JjXFxhcHBcXGNoYXRcXGNvbXBvbmVudHNcXGNoYXRcXGlucHV0LW1lc3NhZ2UtYmxvY2tcXGlucHV0LW1lc3NhZ2UtYmxvY2suY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLG1CQUFtQixFQUFBO0VBSHZCO0lBTVEsV0FBVyxFQUFBO0VBTm5CO0lBVVEsV0FBVztJQUNYLGdCQUFnQjtJQUNoQixZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLFdBQVcsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NoYXQvY29tcG9uZW50cy9jaGF0L2lucHV0LW1lc3NhZ2UtYmxvY2svaW5wdXQtbWVzc2FnZS1ibG9jay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tZXNzYWdlLWJsb2NrIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHJcbiAgICBpbnB1dCB7XHJcbiAgICAgICAgbWFyZ2luOiA3cHg7XHJcbiAgICB9XHJcblxyXG4gICAgYnV0dG9uIHtcclxuICAgICAgICBtYXJnaW46IDdweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgICAgIHdpZHRoOiAzMDBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjNDI4QkNBO1xyXG4gICAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgfVxyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/input-message-block/input-message-block.component.ts":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/chat/components/chat/input-message-block/input-message-block.component.ts ***!
+  \*******************************************************************************************/
+/*! exports provided: InputMessageBlockComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputMessageBlockComponent", function() { return InputMessageBlockComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let InputMessageBlockComponent = class InputMessageBlockComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+InputMessageBlockComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-input-message-block',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./input-message-block.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/input-message-block/input-message-block.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./input-message-block.component.scss */ "./src/app/chat/components/chat/input-message-block/input-message-block.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], InputMessageBlockComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/messages/message/message.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/chat/components/chat/messages/message/message.component.scss ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".wrapper {\n  margin: 21px;\n  position: relative;\n  width: 70%;\n  box-shadow: 17px 18px 23px -22px rgba(0, 0, 0, 0.55); }\n  .wrapper .header {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    background: #BECBD9;\n    border-radius: .4em .4em 0em 0em; }\n  .wrapper .header .header-sender {\n      padding-left: 21px; }\n  .wrapper .header .header-time {\n      padding-right: 21px; }\n  .wrapper .message-wrapper {\n    position: relative;\n    min-height: 40px;\n    border-radius: 0em 0em .4em .4em;\n    background: #F4F8FB; }\n  .wrapper .message-wrapper .message {\n      padding: 7px 21px; }\n  .wrapper:first-child {\n  margin-top: 0px; }\n  .wrapper:last-child {\n  margin-top: 0px; }\n  .message-wrapper:after {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: .6em solid transparent;\n  border-right-color: #F4F8FB;\n  border-left: 0;\n  margin-top: -.6em;\n  margin-left: -.6em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQvbWVzc2FnZXMvbWVzc2FnZS9EOlxcR2l0XFxHZW5lc2lzXFx3ZWIvc3JjXFxhcHBcXGNoYXRcXGNvbXBvbmVudHNcXGNoYXRcXG1lc3NhZ2VzXFxtZXNzYWdlXFxtZXNzYWdlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixVQUFVO0VBRVYsb0RBQWlELEVBQUE7RUFMckQ7SUFRUSxZQUFZO0lBQ1osYUFBYTtJQUNiLG1CQUFtQjtJQUNuQiw4QkFBOEI7SUFDOUIsbUJBQW1CO0lBQ25CLG1CQUFtQjtJQUVuQixnQ0FBZ0MsRUFBQTtFQWZ4QztNQWtCWSxrQkFBa0IsRUFBQTtFQWxCOUI7TUF1QlksbUJBQW1CLEVBQUE7RUF2Qi9CO0lBNEJRLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsZ0NBQWlDO0lBQ2pDLG1CQUFtQixFQUFBO0VBL0IzQjtNQWtDWSxpQkFBaUIsRUFBQTtFQU03QjtFQUNJLGVBQWUsRUFBQTtFQUduQjtFQUNJLGVBQWUsRUFBQTtFQVVuQjtFQUNDLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFFBQVE7RUFDUixRQUFRO0VBQ1IsU0FBUztFQUNULDhCQUE4QjtFQUM5QiwyQkFBMkI7RUFDM0IsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NoYXQvY29tcG9uZW50cy9jaGF0L21lc3NhZ2VzL21lc3NhZ2UvbWVzc2FnZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53cmFwcGVyIHtcclxuICAgIG1hcmdpbjogMjFweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiA3MCU7XHJcblxyXG4gICAgYm94LXNoYWRvdzogMTdweCAxOHB4IDIzcHggLTIycHggcmdiYSgwLDAsMCwwLjU1KTtcclxuXHJcbiAgICAuaGVhZGVyIHtcclxuICAgICAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICNCRUNCRDk7XHJcblxyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IC40ZW0gLjRlbSAwZW0gMGVtO1xyXG5cclxuICAgICAgICAuaGVhZGVyLXNlbmRlciB7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMjFweDtcclxuXHJcbiAgICAgICAgfVxyXG4gICAgICAgIFxyXG4gICAgICAgIC5oZWFkZXItdGltZSB7XHJcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDIxcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5tZXNzYWdlLXdyYXBwZXIge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBtaW4taGVpZ2h0OiA0MHB4O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6ICAwZW0gMGVtIC40ZW0gLjRlbTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjRjRGOEZCO1xyXG5cclxuICAgICAgICAubWVzc2FnZSB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDdweCAyMXB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbn1cclxuXHJcbi53cmFwcGVyOmZpcnN0LWNoaWxkIHtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxufVxyXG5cclxuLndyYXBwZXI6bGFzdC1jaGlsZCB7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbn1cclxuXHJcblxyXG4vLyAubWVzc2FnZS1idWJibGUge1xyXG4vLyBcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuLy8gXHRiYWNrZ3JvdW5kOiAjRjRGOEZCO1xyXG4vLyBcdGJvcmRlci1yYWRpdXM6IC40ZW07XHJcbi8vIH1cclxuXHJcbi5tZXNzYWdlLXdyYXBwZXI6YWZ0ZXIge1xyXG5cdGNvbnRlbnQ6ICcnO1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRsZWZ0OiAwO1xyXG5cdHRvcDogNTAlO1xyXG5cdHdpZHRoOiAwO1xyXG5cdGhlaWdodDogMDtcclxuXHRib3JkZXI6IC42ZW0gc29saWQgdHJhbnNwYXJlbnQ7XHJcblx0Ym9yZGVyLXJpZ2h0LWNvbG9yOiAjRjRGOEZCO1xyXG5cdGJvcmRlci1sZWZ0OiAwO1xyXG5cdG1hcmdpbi10b3A6IC0uNmVtO1xyXG5cdG1hcmdpbi1sZWZ0OiAtLjZlbTtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/messages/message/message.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/chat/components/chat/messages/message/message.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: MessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let MessageComponent = class MessageComponent {
+    constructor() {
+        this.time = new Date();
+    }
+    ngOnInit() {
+    }
+};
+MessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-message',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./message.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/message/message.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./message.component.scss */ "./src/app/chat/components/chat/messages/message/message.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], MessageComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/messages/messages.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/chat/components/chat/messages/messages.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".list-wrapper {\n  height: 100%;\n  position: relative; }\n  .list-wrapper .list {\n    position: absolute;\n    overflow: auto;\n    height: 100%;\n    width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NoYXQvbWVzc2FnZXMvRDpcXEdpdFxcR2VuZXNpc1xcd2ViL3NyY1xcYXBwXFxjaGF0XFxjb21wb25lbnRzXFxjaGF0XFxtZXNzYWdlc1xcbWVzc2FnZXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFZO0VBQ1osa0JBQWtCLEVBQUE7RUFGdEI7SUFLUSxrQkFBa0I7SUFDbEIsY0FBYztJQUNkLFlBQVk7SUFDWixXQUFXLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jaGF0L2NvbXBvbmVudHMvY2hhdC9tZXNzYWdlcy9tZXNzYWdlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5saXN0LXdyYXBwZXIge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuICAgIC5saXN0IHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/chat/messages/messages.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/chat/components/chat/messages/messages.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: MessagesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagesComponent", function() { return MessagesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let MessagesComponent = class MessagesComponent {
+    constructor() {
+        this.Messages = [
+            {
+                id: 1,
+                userId: 1,
+                userName: 'bot',
+                text: '123123'
+            },
+            {
+                id: 2,
+                userId: 2,
+                userName: 'user',
+                text: 'sdfsdffrwerwerwe'
+            },
+            {
+                id: 3,
+                userId: 1,
+                userName: 'bot',
+                text: 'sfsdfsdfsd'
+            },
+            {
+                id: 4,
+                userId: 2,
+                userName: 'user',
+                text: 'fghfgnfgbdfvd dfvd fvdfv'
+            },
+            {
+                id: 4,
+                userId: 2,
+                userName: 'user',
+                text: 'fghfgnfgbdfvd dfvd fvdfv 2'
+            }
+        ];
+    }
+    ngOnInit() {
+    }
+};
+MessagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-messages',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./messages.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/chat/messages/messages.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./messages.component.scss */ "./src/app/chat/components/chat/messages/messages.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], MessagesComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/contacts/contact/contact.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/chat/components/contacts/contact/contact.component.scss ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".contact-wrapped {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  padding: 4px 12px;\n  cursor: pointer; }\n  .contact-wrapped .avatar-wrapper {\n    width: 70px;\n    display: flex;\n    flex-direction: row; }\n  .contact-wrapped .avatar-wrapper .avatar {\n      width: 100%; }\n  .contact-wrapped .info {\n    flex: 1;\n    padding: 4px 0px 4px 7px; }\n  .contact-wrapped .info .name {\n      font-weight: bold;\n      color: #333333; }\n  .contact-wrapped .info .additional {\n      color: #C6C6C6;\n      width: 100%;\n      height: 43px;\n      font-size: 14px;\n      line-height: 1.4;\n      overflow: hidden;\n      text-overflow: ellipsis; }\n  .contact-wrapped:hover {\n  background: rgba(248, 248, 248, 0.35); }\n  .selected {\n  background: rgba(248, 248, 248, 0.85); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NvbnRhY3RzL2NvbnRhY3QvRDpcXEdpdFxcR2VuZXNpc1xcd2ViL3NyY1xcYXBwXFxjaGF0XFxjb21wb25lbnRzXFxjb250YWN0c1xcY29udGFjdFxcY29udGFjdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixlQUFlLEVBQUE7RUFMbkI7SUFRUSxXQUFXO0lBQ1gsYUFBYTtJQUNiLG1CQUFtQixFQUFBO0VBVjNCO01BWVksV0FBVyxFQUFBO0VBWnZCO0lBaUJRLE9BQU87SUFDUCx3QkFBd0IsRUFBQTtFQWxCaEM7TUFxQlksaUJBQWlCO01BQ2pCLGNBQWMsRUFBQTtFQXRCMUI7TUEwQlksY0FBYztNQUNkLFdBQVc7TUFDWCxZQUFZO01BQ1osZUFBZTtNQUNmLGdCQUFnQjtNQUNoQixnQkFBZ0I7TUFDaEIsdUJBQXVCLEVBQUE7RUFLbkM7RUFDSSxxQ0FBcUMsRUFBQTtFQUd6QztFQUNJLHFDQUFxQyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NvbnRhY3RzL2NvbnRhY3QvY29udGFjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWN0LXdyYXBwZWQge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICBwYWRkaW5nOiA0cHggMTJweDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbiAgICAuYXZhdGFyLXdyYXBwZXIge1xyXG4gICAgICAgIHdpZHRoOiA3MHB4O1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgICAgICAuYXZhdGFyIHtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5pbmZvIHtcclxuICAgICAgICBmbGV4OiAxO1xyXG4gICAgICAgIHBhZGRpbmc6IDRweCAwcHggNHB4IDdweDtcclxuXHJcbiAgICAgICAgLm5hbWUge1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgY29sb3I6ICMzMzMzMzM7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuYWRkaXRpb25hbCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjQzZDNkM2O1xyXG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgaGVpZ2h0OiA0M3B4O1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjQ7XHJcbiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG5cclxuLmNvbnRhY3Qtd3JhcHBlZDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDI0OCwgMjQ4LCAyNDgsIDAuMzUpO1xyXG59XHJcblxyXG4uc2VsZWN0ZWQge1xyXG4gICAgYmFja2dyb3VuZDogcmdiYSgyNDgsIDI0OCwgMjQ4LCAwLjg1KTtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/contacts/contact/contact.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/chat/components/contacts/contact/contact.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: ContactComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var src_app_chat_ngrx_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/chat/ngrx/actions/contacts.actions */ "./src/app/chat/ngrx/actions/contacts.actions.ts");
+
+
+
+
+let ContactComponent = class ContactComponent {
+    constructor(store) {
+        this.store = store;
+    }
+    selectContact(userId) {
+        this.store.dispatch(new src_app_chat_ngrx_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_3__["SelectContact"](userId));
+    }
+};
+ContactComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ContactComponent.prototype, "userData", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+], ContactComponent.prototype, "selectedContactUserId", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+], ContactComponent.prototype, "online", void 0);
+ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-contact',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./contact.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contact/contact.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./contact.component.scss */ "./src/app/chat/components/contacts/contact/contact.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], ContactComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/components/contacts/contacts.component.scss":
+/*!******************************************************************!*\
+  !*** ./src/app/chat/components/contacts/contacts.component.scss ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".contacts-wrapper {\n  background: #FFFFFF;\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .contacts-wrapper .btn-wrapper {\n    display: flex;\n    flex-direction: row;\n    height: 50px; }\n  .contacts-wrapper .btn-wrapper .vertical-separator {\n      border-left: 1px solid #DDDDDD; }\n  .contacts-wrapper .btn-wrapper .status-btn {\n      flex: 1;\n      border: 0px;\n      border-bottom: 1px solid #DDDDDD;\n      background: #F8F8F8;\n      outline: none; }\n  .contacts-wrapper .btn-wrapper .active-status-btn {\n      background: #FFFFFF;\n      border-bottom: 0px; }\n  .contacts-wrapper .contact-list-wrapper {\n    display: flex;\n    flex-direction: column;\n    flex: 1; }\n  .contacts-wrapper .contact-list-wrapper .list {\n      height: 1px;\n      flex-grow: 1;\n      overflow-y: auto; }\n  .contacts-wrapper .contact-list-wrapper .list::-webkit-scrollbar {\n      width: 5px;\n      background-color: #BECBD9; }\n  .contacts-wrapper .contact-list-wrapper .list::-webkit-scrollbar-thumb {\n      background-color: #9DAAB9; }\n  .contacts-wrapper .contact-list-wrapper .search {\n      height: 60px;\n      padding: 7px 7px 16px 7px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NvbnRhY3RzL0Q6XFxHaXRcXEdlbmVzaXNcXHdlYi9zcmNcXGFwcFxcY2hhdFxcY29tcG9uZW50c1xcY29udGFjdHNcXGNvbnRhY3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQW1CO0VBQ25CLFlBQVk7RUFFWixhQUFhO0VBQ2Isc0JBQXNCLEVBQUE7RUFMMUI7SUFRUSxhQUFhO0lBQ2IsbUJBQW1CO0lBRW5CLFlBQVksRUFBQTtFQVhwQjtNQWNZLDhCQUE4QixFQUFBO0VBZDFDO01Ba0JZLE9BQU87TUFDUCxXQUFXO01BQ1gsZ0NBQWdDO01BQ2hDLG1CQUFtQjtNQUNuQixhQUFhLEVBQUE7RUF0QnpCO01BMEJZLG1CQUFtQjtNQUNuQixrQkFBa0IsRUFBQTtFQTNCOUI7SUFnQ1EsYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixPQUFPLEVBQUE7RUFsQ2Y7TUFxQ1ksV0FBVztNQUNYLFlBQVk7TUFDWixnQkFBZ0IsRUFBQTtFQXZDNUI7TUEyQ1ksVUFBVTtNQUNWLHlCQUF5QixFQUFBO0VBNUNyQztNQWdEWSx5QkFBeUIsRUFBQTtFQWhEckM7TUFvRFksWUFBWTtNQUNaLHlCQUF5QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY2hhdC9jb21wb25lbnRzL2NvbnRhY3RzL2NvbnRhY3RzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhY3RzLXdyYXBwZXIge1xyXG4gICAgYmFja2dyb3VuZDogI0ZGRkZGRjtcclxuICAgIGhlaWdodDogMTAwJTtcclxuXHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHJcbiAgICAuYnRuLXdyYXBwZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuXHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG5cclxuICAgICAgICAudmVydGljYWwtc2VwYXJhdG9yIHtcclxuICAgICAgICAgICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjREREREREO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnN0YXR1cy1idG4ge1xyXG4gICAgICAgICAgICBmbGV4OiAxO1xyXG4gICAgICAgICAgICBib3JkZXI6IDBweDtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNEREREREQ7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNGOEY4Rjg7XHJcbiAgICAgICAgICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuYWN0aXZlLXN0YXR1cy1idG4ge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjRkZGRkZGO1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tOiAwcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jb250YWN0LWxpc3Qtd3JhcHBlciB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgIGZsZXg6IDE7XHJcblxyXG4gICAgICAgIC5saXN0IHtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxcHg7XHJcbiAgICAgICAgICAgIGZsZXgtZ3JvdzogMTtcclxuICAgICAgICAgICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5saXN0Ojotd2Via2l0LXNjcm9sbGJhciB7XHJcbiAgICAgICAgICAgIHdpZHRoOiA1cHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNCRUNCRDk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIFxyXG4gICAgICAgIC5saXN0Ojotd2Via2l0LXNjcm9sbGJhci10aHVtYiB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM5REFBQjk7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuc2VhcmNoIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICAgICAgICBwYWRkaW5nOiA3cHggN3B4IDE2cHggN3B4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/chat/components/contacts/contacts.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/chat/components/contacts/contacts.component.ts ***!
+  \****************************************************************/
+/*! exports provided: ContactsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsComponent", function() { return ContactsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _ngrx_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ngrx/actions/contacts.actions */ "./src/app/chat/ngrx/actions/contacts.actions.ts");
+/* harmony import */ var _ngrx_reducers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ngrx/reducers */ "./src/app/chat/ngrx/reducers/index.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+
+
+let ContactsComponent = class ContactsComponent {
+    constructor(store) {
+        this.store = store;
+        this.activeBtn = 'Online';
+        this.contacts$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_ngrx_reducers__WEBPACK_IMPORTED_MODULE_4__["getFilteredContactsBySearch"]));
+        this.selectedContactId$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_ngrx_reducers__WEBPACK_IMPORTED_MODULE_4__["getSelected"]));
+        this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('');
+    }
+    ngOnInit() {
+        this.onSearchChange();
+        this.store.dispatch(new _ngrx_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_3__["LoadContacts"]());
+    }
+    onSearchChange() {
+        this.search.valueChanges.subscribe(e => {
+            this.store.dispatch(new _ngrx_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_3__["SetSearchValue"](e));
+        });
+    }
+    trackByFn(index, item) {
+        return item.userId;
+    }
+};
+ContactsComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+ContactsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-contacts',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./contacts.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/chat/components/contacts/contacts.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./contacts.component.scss */ "./src/app/chat/components/contacts/contacts.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], ContactsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/ngrx/actions/contacts.actions.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/chat/ngrx/actions/contacts.actions.ts ***!
+  \*******************************************************/
+/*! exports provided: ContactsActionTypes, LoadContacts, LoadContactsSuccess, LoadContactsFail, SelectContact, SetSearchValue */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsActionTypes", function() { return ContactsActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadContacts", function() { return LoadContacts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadContactsSuccess", function() { return LoadContactsSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadContactsFail", function() { return LoadContactsFail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectContact", function() { return SelectContact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SetSearchValue", function() { return SetSearchValue; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var ContactsActionTypes;
+(function (ContactsActionTypes) {
+    ContactsActionTypes["LoadContacts"] = "[Chat Contacts] Load Contacts";
+    ContactsActionTypes["LoadContactsSuccess"] = "[Chat Contacts] Load Contacts Success";
+    ContactsActionTypes["LoadContactsFail"] = "[Chat Contacts] Load Contacts Fail";
+    ContactsActionTypes["SelectContact"] = "[Chat Contacts] Select Contact";
+    ContactsActionTypes["SetSearchValue"] = "[Chat Contacts] Select Search";
+})(ContactsActionTypes || (ContactsActionTypes = {}));
+class LoadContacts {
+    constructor() {
+        this.type = ContactsActionTypes.LoadContacts;
+    }
+}
+class LoadContactsSuccess {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = ContactsActionTypes.LoadContactsSuccess;
+    }
+}
+class LoadContactsFail {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = ContactsActionTypes.LoadContactsFail;
+    }
+}
+class SelectContact {
+    constructor(userId) {
+        this.userId = userId;
+        this.type = ContactsActionTypes.SelectContact;
+    }
+}
+class SetSearchValue {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = ContactsActionTypes.SetSearchValue;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/chat/ngrx/effects/contacts.effects.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/chat/ngrx/effects/contacts.effects.ts ***!
+  \*******************************************************/
+/*! exports provided: ContactsEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsEffects", function() { return ContactsEffects; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm2015/effects.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../actions/contacts.actions */ "./src/app/chat/ngrx/actions/contacts.actions.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _ngrx_user_module_reducers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../ngrx/user-module/reducers */ "./src/app/ngrx/user-module/reducers/index.ts");
+
+
+// rxjs
+
+
+// ngrx
+
+
+
+
+
+
+const httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+    })
+};
+let ContactsEffects = class ContactsEffects {
+    constructor(store, actions$, http) {
+        this.store = store;
+        this.actions$ = actions$;
+        this.http = http;
+        this.loadContacts$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["ofType"])(_actions_contacts_actions__WEBPACK_IMPORTED_MODULE_6__["ContactsActionTypes"].LoadContacts), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["withLatestFrom"])(this.store.select(_ngrx_user_module_reducers__WEBPACK_IMPORTED_MODULE_9__["getUserId"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(([action, userId]) => {
+            return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].apiUrl}/user/contacts/${userId}`, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((res) => {
+                return new _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_6__["LoadContactsSuccess"](res);
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])((error) => {
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(new _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_6__["LoadContactsFail"](error));
+            }));
+        }));
+    }
+};
+ContactsEffects.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"] },
+    { type: _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["Actions"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["Effect"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"])
+], ContactsEffects.prototype, "loadContacts$", void 0);
+ContactsEffects = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"],
+        _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["Actions"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]])
+], ContactsEffects);
+
+
+
+/***/ }),
+
+/***/ "./src/app/chat/ngrx/reducers/contacts.reducer.ts":
+/*!********************************************************!*\
+  !*** ./src/app/chat/ngrx/reducers/contacts.reducer.ts ***!
+  \********************************************************/
+/*! exports provided: reducer, getLoading, getSelected, getSearchValue, getContacts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLoading", function() { return getLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSelected", function() { return getSelected; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchValue", function() { return getSearchValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getContacts", function() { return getContacts; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/contacts.actions */ "./src/app/chat/ngrx/actions/contacts.actions.ts");
+
+
+const initialState = {
+    loading: false,
+    selectedId: undefined,
+    searchValue: undefined,
+    contacts: []
+};
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__["ContactsActionTypes"].LoadContacts: {
+            return state;
+        }
+        case _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__["ContactsActionTypes"].LoadContactsSuccess: {
+            return Object.assign({}, state, { selectedId: action.payload && action.payload.length ? action.payload[0].userId : undefined, contacts: action.payload });
+        }
+        case _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__["ContactsActionTypes"].LoadContactsFail: {
+            return state;
+        }
+        case _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__["ContactsActionTypes"].SelectContact: {
+            return Object.assign({}, state, { selectedId: action.userId });
+        }
+        case _actions_contacts_actions__WEBPACK_IMPORTED_MODULE_1__["ContactsActionTypes"].SetSearchValue: {
+            return Object.assign({}, state, { searchValue: action.payload });
+        }
+        default: {
+            return state;
+        }
+    }
+}
+const getLoading = (state) => state.loading;
+const getSelected = (state) => state.selectedId;
+const getSearchValue = (state) => state.searchValue;
+const getContacts = (state) => state.contacts;
+
+
+/***/ }),
+
+/***/ "./src/app/chat/ngrx/reducers/index.ts":
+/*!*********************************************!*\
+  !*** ./src/app/chat/ngrx/reducers/index.ts ***!
+  \*********************************************/
+/*! exports provided: reducers, getChatState, getContactsState, getContactsLoading, getContacts, getSelected, getSearchValue, getFilteredContactsBySearch, getSelectedContact */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducers", function() { return reducers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getChatState", function() { return getChatState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getContactsState", function() { return getContactsState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getContactsLoading", function() { return getContactsLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getContacts", function() { return getContacts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSelected", function() { return getSelected; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchValue", function() { return getSearchValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFilteredContactsBySearch", function() { return getFilteredContactsBySearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSelectedContact", function() { return getSelectedContact; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contacts.reducer */ "./src/app/chat/ngrx/reducers/contacts.reducer.ts");
+
+
+
+const reducers = {
+    contacts: _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__["reducer"]
+};
+const getChatState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createFeatureSelector"])('chat');
+const getContactsState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getChatState, (state) => {
+    return state.contacts;
+});
+const getContactsLoading = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContactsState, _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__["getLoading"]);
+const getContacts = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContactsState, _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__["getContacts"]);
+const getSelected = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContactsState, _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__["getSelected"]);
+const getSearchValue = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContactsState, _contacts_reducer__WEBPACK_IMPORTED_MODULE_2__["getSearchValue"]);
+const getFilteredContactsBySearch = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContacts, getSearchValue, (contacts, searchValue) => {
+    if (searchValue) {
+        const sv = ((searchValue).trim()).toLowerCase();
+        return contacts.filter(e => ((e.username).trim()).toLowerCase().indexOf(sv) !== -1);
+    }
+    else {
+        return contacts;
+    }
+});
+const getSelectedContact = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getContacts, getSelected, (contacts, selectedId) => {
+    return contacts.find(e => e.userId === selectedId);
+});
+
+
+/***/ }),
+
+/***/ "./src/app/navbar/components/navbar/navbar.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/navbar/components/navbar/navbar.component.scss ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25hdmJhci9jb21wb25lbnRzL25hdmJhci9uYXZiYXIuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/navbar/components/navbar/navbar.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/navbar/components/navbar/navbar.component.ts ***!
+  \**************************************************************/
+/*! exports provided: NavbarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
+/* harmony import */ var _ngrx_user_module_actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../ngrx/user-module/actions/user.actions */ "./src/app/ngrx/user-module/actions/user.actions.ts");
+/* harmony import */ var _ngrx_user_module_reducers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../ngrx/user-module/reducers */ "./src/app/ngrx/user-module/reducers/index.ts");
+
+
+//ngrx
+
+
+
+let NavbarComponent = class NavbarComponent {
+    constructor(store) {
+        this.store = store;
+        this.userName$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_ngrx_user_module_reducers__WEBPACK_IMPORTED_MODULE_4__["getUserName"]));
+    }
+    logout() {
+        this.store.dispatch(new _ngrx_user_module_actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["LogoutUser"]());
+    }
+};
+NavbarComponent.ctorParameters = () => [
+    { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+];
+NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-navbar',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./navbar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/navbar/components/navbar/navbar.component.html")).default,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./navbar.component.scss */ "./src/app/navbar/components/navbar/navbar.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+], NavbarComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/navbar/navbar.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/navbar/navbar.module.ts ***!
+  \*****************************************/
+/*! exports provided: NavbarModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarModule", function() { return NavbarModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/navbar/components/navbar/navbar.component.ts");
+
+
+
+
+const COMPONENTS = [
+    _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"]
+];
+let NavbarModule = class NavbarModule {
+};
+NavbarModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: COMPONENTS,
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+        ],
+        exports: [COMPONENTS]
+    })
+], NavbarModule);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=chat-chat-module-es2015.js.map

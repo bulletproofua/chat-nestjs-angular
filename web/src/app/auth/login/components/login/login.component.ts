@@ -1,41 +1,89 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { take } from 'rxjs/operators';
+
+import { LoginService } from './login.service';
+// ngrx
+import { Store, select } from '@ngrx/store';
+import { SetUserData } from '../../../../ngrx/user-module/actions/user.actions';
+import * as fromUser from '../../../../ngrx/user-module/reducers';
+
+import { User } from '../../../../ngrx/user-module/models/user';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [LoginService],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
+  public error = '';
+
+  public isUserLoggedIn$ = this.store.pipe(select(fromUser.isUserLoggedIn));
 
   constructor(
       private formBuilder: FormBuilder,
-      private route: ActivatedRoute,
-      private router: Router
+      private loginService: LoginService,
+      private router: Router,
+      private store: Store<any>
   ) {
-      // redirect to home if already logged in
-      // if (this.authenticationService.currentUserValue) { 
-      //     this.router.navigate(['/']);
-      // }
+    this.redirectIfAlreadyLoggedIn();
   }
 
+  redirectIfAlreadyLoggedIn() {
+    this.isUserLoggedIn$.pipe(take(1)).subscribe((userLoggedIn: boolean) => {
+      if (userLoggedIn) {
+        this.router.navigateByUrl('chat');
+      }
+    })
+  }
+
+  get email() { return this.loginForm.get('email'); }
+  get password() { return this.loginForm.get('password'); }
+  
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
+        email: ['test@gmail.com', [Validators.required, Validators.email]],
+        password: ['test123', [Validators.required]]
     });
   }
 
-  // convenience getter for easy access to form fields
-  // get f() { return this.loginForm.controls; }
+  getErrorMessage(e: any) {
+		if (e.errors) {
+			const K = Object.keys(e.errors);
+			switch (K[0]) {
+        case 'email': return 'Incorrect format.';
+				case 'required': return 'Field is required';
+				default: return '';
+			}
+		}
+	}
 
   onSubmit() {
+    const data = {
+      username: this.email.value,
+      password: this.password.value
+    }
 
+    this.loginService.login(data)
+    .pipe(take(1))
+    .subscribe(
+      (res: User) => {
+        this.store.dispatch(new SetUserData(res));
+        this.router.navigateByUrl('chat');
+      },
+      (error: string) => {
+        this.error = 'Incorrect email or password.'
+        this.loginForm.valueChanges
+        .pipe(take(1))
+        .subscribe(e => {
+          this.error = '';
+        })   
+      }
+    )
   }
 }

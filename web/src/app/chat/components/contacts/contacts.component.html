@@ -12,12 +12,12 @@
   </div>
   <div class="contact-list-wrapper">
     <div class="list" >
-      <ng-container *ngFor="let contact of contacts">
-        <app-contact></app-contact>
+      <ng-container *ngFor="let contact of contacts$ | async; trackBy: trackByFn">
+        <app-contact [userData]="contact" [selectedContactUserId]="selectedContactId$ | async"></app-contact>
       </ng-container>
     </div>
     <div class="search">
-      <input type="text" class="form-control" placeholder="Search...">
+      <input type="text" class="form-control" placeholder="Search..." [formControl]="search">
     </div>
   </div>
 </section>

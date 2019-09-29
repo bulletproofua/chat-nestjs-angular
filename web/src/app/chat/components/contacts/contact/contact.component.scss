@@ -3,6 +3,7 @@
     flex-direction: row;
     height: 80px;
     padding: 4px 12px;
+    cursor: pointer;
 
     .avatar-wrapper {
         width: 70px;
@@ -36,4 +37,8 @@
 
 .contact-wrapped:hover {
     background: rgba(248, 248, 248, 0.35);
+}
+
+.selected {
+    background: rgba(248, 248, 248, 0.85);
 }

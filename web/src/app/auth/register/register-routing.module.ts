@@ -5,8 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
-  { path: '', component: RegistrationComponent },
-  { path: '**', redirectTo: ''},
+  { path: '', component: RegistrationComponent }
 ];
 
 @NgModule({

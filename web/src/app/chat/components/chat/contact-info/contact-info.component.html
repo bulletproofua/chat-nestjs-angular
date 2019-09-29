@@ -1,10 +1,19 @@
 <section class="contact-info">
-  <div class="avatar-wrapper">
-    <img class="avatar" src="assets/img/user/default_user_2.png" alt="user_icon">
-  </div>
-
-  <div class="info">
-    <h4 class="info-name">selected contact name</h4>
-    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit architecto mollitia obcaecati atque, praesentium quo minus ducimus, cumque quam iste quidem ipsam rerum quaerat, placeat voluptatibus provident magnam. Possimus, placeat.</p>
-  </div>
+  <ng-container *ngIf="(selectedContact$ | async) as SC; else notSelected">
+    <div class="avatar-wrapper">
+      <img class="avatar" [src]="SC?.avatar" alt="user_icon">
+    </div>
+  
+    <div class="info">
+      <h4 class="info-name">{{SC?.username}}</h4>
+      <p> Some info about user</p>
+    </div>
+  </ng-container>
+  <ng-template #notSelected>
+    <div>
+      Please select chat
+    </div>
+  </ng-template>
+  
+  
 </section>
